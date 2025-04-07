@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!--Chatpgt has been used in my code to find and correct mistakes as well as keeping the code more compact, removing repetitions-->
+<html lang="en">
+
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link href="styles.css" rel="stylesheet">
+        <!--Fonts-->
+        <link href="https://fonts.cdnfonts.com/css/luminari" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/chalkduster" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/futura-condensed-pt" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/the-wild-breath-of-zelda" rel="stylesheet">
+        <!--Icons-->
+        <script src="https://kit.fontawesome.com/d23daa5a64.js" crossorigin="anonymous"></script>
+        <!--Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+                crossorigin="anonymous"></script>
+        <!--Jquery-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+                crossorigin="anonymous"></script>
+
+        <title>Riccardo Ghini</title>
+
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/x-icon" href="/images/purpleRGicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=0.75">
+
+    </head>
+    <body>
+
+        <nav class="navBar">
+                <button class="burger-menu" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <img src="images/purpleRG.png" alt="DnD Logo" id="mobileLogo">
+                <div class="navBar-links" id="navBarLinks">
+                    <ul>
+                        <img src="images/purpleRG.png" alt="DnD Logo" width='80' height='60' id='logo'>
+                        <li class="tab"><a data-key='about' href="#top-mark">About Me</a></li>
+                        <li class="tab"><a data-key='timeline' href="#timeline">My Life</a></li>
+                        <li class="tab"><a data-key="thesis" href="#thesis-preview">Thesis</a></li>
+                        <li class="tab"><a data-key='contact' href="#contactForm">Contact Me</a></li>
+                        <li class="tab"><a data-key='social' href="#magicbox">Socials</a></li>
+                        <li>
+                            <div class="search-box">
+                                <button id='check' class="btn-search" onclick="ctrlF(document.getElementById('bodysearch').value)">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <input type="text" class="input-search" id='bodysearch' placeholder="Type to Search..." onkeydown="search(this)">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-right">
+                <a data-key="cv" id="view-cv" href="pdf/RG_CV_eng.pdf" target="_blank" rel="noopener noreferrer" class="view-btn">
+                    View my resume
+                </a>
+                <button id="language-toggle">Switch language</button>
+                </div>
+        </nav>
+
+        <div id="grad1">
+        <div id="wrapper">
+
+            <div id="left-column" class='hidden'>
+                <h5 data-key='musicControls' style='color:white;'>Background Music</h5>
+                <div class="controllers">
+                    <button type="button" class="cntrls" onclick="play()">Play/Pause Music</button>
+                    <button type="button" class="cntrls" onclick="mute()">Mute/Unmute</button>
+                </div>
+                <audio loop id='Rain'> <!--preload="auto"-->
+                    <source src="music/Rain.mp3">
+                    Song: Rain by Tony Ann. If you are reading this, it is because your browser does not support the audio element.
+                </audio>
+                <small style="letter-spacing:2px; font-weight:100;">Song: Rain by Tonyann</small>
+            </div>
+
+            <div class="container" id='content'>
+                <div id='innercontent'>
+                <div id='top-mark'></div>
+                <br><br class='bri'><br class='bri'><br class='bri'>
+
+                <button id="leftc" class="columnbutton" data-key="leftBtn" data-state="closed" onclick="toggleColumn('left-column', 'leftc', 'Left')">
+                    Do you want background music?
+                </button>
+                &nbsp;
+                <button id="rightc" class="columnbutton" data-key="rightBtn" data-state="closed" onclick="toggleColumn('right-column', 'rightc', 'Right')">
+                    Do you want to change the font?
+                </button>
+
+                <br><br>
+
+                <section id='sectionOne'>
+                <img class="myphoto" src="images/ric.jpg" alt="my-photo">
+                <h3 data-key="welcome">Hello there,</h3>
+
+                <p style='display:inline;' data-key="s1">I'm Ric, a 25 years old guy from Forlì, Italy, also known as</p> <span data-key="name" style="color: #7c3aed">Riccardo Ghini</span>!
+
+                <p data-key="s2">I have a background in Mathematics and am currently diving into computer science and web devolpment. I have a deep passion for
+                astrophysics, though my studies have taken me in a different direction for now. I also enjoy exploring history, particularly the
+                medieval period.</p>
+
+                <p data-key="s3">I’m an avid reader who devours fantasy, sci-fi, and the occasional historical book or novel of course. I have a deep passion for
+                roleplaying games -Dungeons & Dragons is my go to lately- and I spend plenty of time drawing worlds -both on paper and in my mind.</p>
+
+                <p data-key="s4">I love board games too, though these days I rarely get to play them as often as I used to. You know, with a larger circle of friends
+                and fewer free nights, those classic 4-player games are a rare treat. I also enjoy video games, LEGO, and planning trips, too many
+                actually for my finances.</p>
+
+                <p data-key="s5">When I’m not immersed in creative or gaming endeavors, you can usually find me at the gym or honing my skills in medieval sword fencing
+                —discipline that perfectly complements my love for all things medieval. My weekends are a whirlwind of activity as I volunteer as a
+                scout leader in the parish near my home.</p>
+
+                <p data-key="s6">I'm always on the lookout for interesting projects, whether it's coding, writing, or just diving into a new subject.
+                I listen to music while working, but I wouldn't call myself an expert on any particular genre.</p>
+
+                <p data-key="s7">Welcome to my little corner on the web!</p>
+                </section>
+
+                <br><hr><br>
+                <h2><span data-key="timelineTitle" style='font-weight: 600; letter-spacing: 2px;'>My Life so far</span></h2>
+
+                <div class="timeline-wrapper">
+                    <!-- The bar element appears above the timeline entries -->
+                    <div class="bar"></div>
+                    <div class="timeline" id="timeline">
+                        <div class="entry">
+                            <h1>2000</h1>
+                            <h2 data-key="e0">The Start</h2>
+                            <div data-key="event1" class="entry-content">
+                                I was born, I suppose!
+                            </div>
+                        </div>
+                        <div data-key="yy" style='white-space: normal; min-width: 350px; font-size:20px;'>Younger years full of Scouts, friends, school, games and volleyball eventually passed...</div>
+                        <div class="entry">
+                            <h1>2019</h1>
+                            <div data-key="event2" class="entry-content">
+                                I finished Highschool, said goodbye to some friends and closed a big happy chapter of my life.
+                            </div>
+                        </div>
+                        <div class="entry">
+                            <h1>2021</h1>
+                            <div class="entry-content">
+                                <span data-key="event3">In april I concluded my Scout journey as a youth and became a Scout leader for the youth to come.</span>
+                                <br> <span data-key="event31">Seeing you are interested, the totem I was given when I was a teenager is Determined Marmot!</span>
+                            </div>
+                            <!-- Read More Button, initially hidden -->
+                            <u><button class="read-more" style="display:none;">Read more</button></u>
+                        </div>
+                        <div class="entry">
+                            <h1>Feb. 2024</h1>
+                            <div data-key="event4" class="entry-content">
+                                I met my wonderful girlfriend, Carlotta, and fell in love!
+                            </div>
+                        </div>
+                        <div class="entry">
+                            <h1>Jul. 2024</h1>
+                            <div data-key="event5" class="entry-content">
+                                I finally managed to obtain my degree in Mathematics from University of Bologna!
+                            </div>
+                        </div>
+                        <div class="entry">
+                            <h1>2025</h1>
+                            <div data-key="event6" class="entry-content">
+                                I created this site both for myself and as a final project for CS50x, a Computer Science course by Harvard.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-controls">
+                        <button id="scrollLeftBtn"><i class="fa-solid fa-caret-left"></i></button>
+                        <button id="scrollRightBtn"><i class="fa-solid fa-caret-right"></i></button>
+                    </div>
+                </div>
+
+                <br><hr><br>
+
+                <h2 data-key='pdfTitle'>Bachelor's Degree Thesis</h2>
+                <div class="pdf-container">
+                    <img id="thesis-preview" src="images/thesis-preview.png" alt="Preview of Thesis" class="pdf-thumbnail">
+
+                    <div class="pdf-info">
+                        <a href="pdf/thesis.pdf" target="_blank" class="pdf-link" data-key='pdflink'>📄View Full Thesis</a>
+                        <p class="pdf-abstract">
+                            <span data-key='pdf1'>This thesis explores </span><span data-key='pdftitle' style="color: #7c3aed"> Gravitational Lensing
+                            as a tool for detecting Dark Matter</span><span data-key='pdf2'>, which makes up most of the Universe’s matter
+                            but cannot be directly observed. After introducing key concepts, the three main types of lensing (strong, weak, and micro)
+                            are examined with practical applications, including dark matter evidence in the Bullet Cluster. Lastly, the thesis discusses
+                            the necessity of dark matter, potential candidates, and alternative theories proposed over time.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <br><hr><br>
+
+                <div class="container1">
+                    <div class="fancy-border">
+                        <h2 data-key="contactme" class="text-center mb-4">Contact Me</h2>
+                        <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSe8iqgRUGeM1FU_eeI7S1VtS1H6cvtq_zxHKFKHmXHzNUR1Qw/formResponse?"
+                        target="hidden_iframe">
+                        <input type="text" name="honeypot" id="honeypot" style="display:none" tabindex="-1" autocomplete="off">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">
+                                    <i class="fas fa-user"></i>
+                                    <span data-key="name1"> Name</span>
+                                </label>
+                                <input type="text" class="form-control" name="entry.1712370041" id="entry.1712370041" placeholder="Your name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">
+                                    <i class="fas fa-envelope"></i>
+                                    <span data-key="email"> Email address</span>
+                                </label>
+                                <input type="email" class="form-control" name="entry.1881473833" id="entry.1881473833" placeholder="Your email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">
+                                    <i class="fas fa-comments"></i>
+                                    <span data-key="message"> Message</span>
+                                </label>
+                                <textarea class="form-control" name="entry.822952891" id="entry.822952891" rows="3" placeholder="Enter your message" required></textarea>
+                            </div>
+                            <input type="submit" value="Submit" id="submitButton" class="btn btn-primary w-100">
+                        </form>
+                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                    </div>
+                </div>
+
+                <div id='ex'>
+                    <div class="hiddenBottom">
+                        <div class="footr">
+                            <div class="socials">
+                                <a href="https://www.reddit.com/user/DiachronicRig/"><i class="fa-brands fa-reddit fa-2x"></i></a>
+                                <a href="mailto:rikighi00@gmail.com?subject=Hello%20there&body=Hi%20there,%0A%0AI%20would%20like%20to%20contact%20you regarding..."><i class=" email fa-regular fa-envelope fa-2x"></i></a>
+                                <a href="https://www.instagram.com/riccardo_ghini/"><i class="fa-brands fa-instagram fa-2x"></i></a>
+                                <a href="https://it.linkedin.com/in/riccardo-ghini-49bb3a335?trk=people-guest_people_search-card"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <figure id='magicbox'>
+                        <img id='image6' class='magic' src="magiccircle/p-image611.png" style='transform: translateY(-5px);' alt="6">
+                        <img id='image5' class='magic' src="magiccircle/p-image511.png" style='transform: translateY(-5px);' alt="5">
+                        <img id='image4' class='magic' src="magiccircle/p-image41.png" alt="4">
+                        <img id='image3' class='magic' src="magiccircle/p-image31.png" alt="3">
+                        <img id='image2' class='magic' src="magiccircle/p-image21.png" alt="2">
+                        <img id='image1' class='magic' src="magiccircle/p-image11.png" alt="1">
+                        <img id='image0' class='magic' src="magiccircle/p-image0001.png" alt="0">
+                    </figure>
+                    <footer style='transform:translate(40px,-25px);'><small><i data-key="art">Art by A.Shipwright on ArtStation</i></small></footer>
+                </div>
+            </div>
+            <a href="#top-mark" class="go-top"> &nbsp;<i class="fas fa-angle-double-up"></i>&nbsp; </a>
+            </div>
+
+            <div id='right-column' class='hidden'>
+
+                <h5 data-key='Appereance' style='color:white;'>Appereance</h5>
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="myFunction()" style='letter-spacing: 1px;'>
+                        Font  <i class="fa-solid fa-bars" id='burgher' style="transform: translateY(5%);"></i>
+                    </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <input type="radio" id="font" name="font" value="Arial"> <label> Gessetto</label><br>
+                        <input type="radio" id="font" name="font" value="Times"> <label>Times</label><br>
+                        <input type="radio" id="font" name="font" value="Futura"> <label>Futura (Default)</label><br>
+                        <input type="radio" id="font" name="font" value="Luminari"> <label data-key="font4">Medioevale</label><br>
+                    </div>
+                </div>
+
+                <!--
+                </br>
+                <input type="text" id="mySearch" onkeyup="myEngine()" style='letter-spacing: 1px;' placeholder="Search the index.." title="Type in a category">
+                <ul id="myMenu">
+                    <li><a href="#First">Books</a></li>
+                    <li><a href="#Second">Films</a></li>
+                    <li><a href="#Third">TTRPG</a></li>
+                    <li><a href="#Fourth">Board and video games</a></li>
+                    <li><a href='#magicbox'>Travels</a></li>
+                </ul>
+                -->
+            </div>
+        </div>
+        <!--<footer class="text-center bg-body-tertiary text-muted" style="background-color: #262626; color: #a78bfa;" >hi</footer>-->
+        <footer id='foot'>&copy; 2025 Riccardo Ghini <a href="#top-mark" class='top'> <span data-key="bottom">Back to top </span> <i class="fas fa-angle-double-up"></i></a></footer>
+
+    </div>
+    </body>
+
+    <script src="translations.js"></script>
+    <script src='script.js' defer></script>
+
+</html>

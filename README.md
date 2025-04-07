@@ -1,5 +1,9 @@
-# DiachronicRig.github.io
+# Me, myself and my website by Riccardo Ghini
+#### Video Demo:  <https://youtu.be/ei_Ber1lcB8>
+## Description:
 
+For my final project I decided to build a website for myself that I could use as a sort of online Resume, always at hand.\
+I started with taking inspiration looking around the web and then step by step I implemented the features that i found good looking or useful.\
 My website aims to be responsive for both PCs and mobile devices but I only had my PC and my phone to test it out so I expect some bugs in general.\
 This project folder contains an html file for the main site structure, a css file to properly position and style all the elements, a script.js to control all the interactive stuff and the functions throughout the website and a translation.js that acts as a library of some sort when switching languages.
 
